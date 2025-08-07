@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:svg_editor/chart_part/chart.dart';
 import 'package:svg_editor/chat_app/chat_app.dart';
 import 'package:svg_editor/screen/widgets/svg_header_widget.dart';
 import 'package:svg_editor/screen/widgets/svg_layer_panel.dart';
 import 'package:svg_editor/screen/widgets/svg_preview_widget.dart';
 
+import '../animated_tab_bar/tab_bar.dart';
 import '../service/svg_editor_service.dart';
 
 class SvgEditorScreen extends StatelessWidget {
@@ -40,6 +42,14 @@ class SvgEditorScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
+            ElevatedButton(
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AnimatedTabBar())),
+                child: Text("Animated Tab Bar ")),
+            ElevatedButton(
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EnergyChart())),
+                child: Text("Chart App")),
             ElevatedButton(
                 onPressed: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ChatApp())),
